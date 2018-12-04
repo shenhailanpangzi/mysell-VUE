@@ -24,6 +24,12 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    // 配置没有分号就报错
+    'semi': ['error', 'always'],
+    // 使用webstorm自带的格式化插件格式化，所以要忽略indent缩进
+    'indent': 0,
+    //设置data方法后不用加空格
+    'space-before-function-paren': 0
   }
 }

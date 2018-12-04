@@ -1,0 +1,32 @@
+//全局样式
+body, html
+  line-height: 1
+  font-weight: 200
+  //字体
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif
+
+//sticky footer布局
+.clearfix
+  display: inline-block
+  &:after
+    display: block
+    content: "."
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+
+//根据不同的设备进行缩放  手写兼容性代码
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+  //定义全局1px
+  .border-1px
+    &::after
+      //Y轴上的
+      -webkit-transform: scaleY(0.7)
+      transform: scaleY(0.7)
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+  .border-1px
+    &::after
+      -webkit-transform: scaleY(0.5)
+      transform: scaleY(0.5)
