@@ -1,6 +1,6 @@
 {
   "seller": {
-    "name": "粥品香坊（回龙观）",
+    "name": "老周凉菜（阳泉天成巷）",
     "description": "蜂鸟专送",
     "deliveryTime": 38,
     "score": 4.2,
@@ -11,7 +11,7 @@
     "deliveryPrice": 4,
     "ratingCount": 24,
     "sellCount": 90,
-    "bulletin": "粥品香坊其烹饪粥料的秘方源于中国千年古法，在融和现代制作工艺，由世界烹饪大师屈浩先生领衔研发。坚守纯天然、0添加的良心品质深得消费者青睐，发展至今成为粥类的引领品牌。是2008年奥运会和2013年园博会指定餐饮服务商。",
+    "bulletin": "老周凉菜其烹饪粥料的秘方源于中国千年古法，在融和现代制作工艺，由世界烹饪大师屈浩先生领衔研发。坚守纯天然、0添加的良心品质深得消费者青睐，发展至今成为粥类的引领品牌。是2008年奥运会和2013年园博会指定餐饮服务商。",
     "supports": [
       {
         "type": 0,
@@ -54,7 +54,7 @@
       "type": -1,
       "foods": [
         {
-          "name": "皮蛋瘦肉粥",
+          "name": "腐竹",
           "price": 10,
           "oldPrice": 18,
           "description": "咸粥",
@@ -88,7 +88,7 @@
           "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "扁豆焖面",
+          "name": "花生",
           "price": 14,
           "oldPrice": "",
           "description": "",
@@ -122,7 +122,7 @@
           "image": "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "葱花饼",
+          "name": "豆角",
           "price": 10,
           "oldPrice": "",
           "description": "",
@@ -156,7 +156,7 @@
           "image": "http://fuss10.elemecdn.com/f/28/a51e7b18751bcdf871648a23fd3b4jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "牛肉馅饼",
+          "name": "粉丝",
           "price": 14,
           "oldPrice": "",
           "description": "",
@@ -224,7 +224,7 @@
           "image": "http://fuss10.elemecdn.com/7/72/9a580c1462ca1e4d3c07e112bc035jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "南瓜粥",
+          "name": "豆皮",
           "price": 9,
           "oldPrice": "",
           "description": "甜粥",
@@ -257,7 +257,7 @@
           "image": "http://fuss10.elemecdn.com/8/a6/453f65f16b1391942af11511b7a90jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "红豆薏米美肤粥",
+          "name": "土豆片",
           "price": 12,
           "oldPrice": "",
           "description": "甜粥",
@@ -291,7 +291,7 @@
           "image": "http://fuss10.elemecdn.com/d/22/260bd78ee6ac6051136c5447fe307jpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "八宝酱菜",
+          "name": "木耳",
           "price": 4,
           "oldPrice": "",
           "description": "",
@@ -325,7 +325,7 @@
           "image": "http://fuss10.elemecdn.com/9/b5/469d8854f9a3a03797933fd01398bjpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "红枣山药糙米粥",
+          "name": "山药",
           "price": 10,
           "oldPrice": "",
           "description": "",
@@ -359,7 +359,7 @@
           "image": "http://fuss10.elemecdn.com/9/b5/469d8854f9a3a03797933fd01398bjpeg.jpeg?imageView2/1/w/750/h/750"
         },
         {
-          "name": "糊塌子",
+          "name": "银耳",
           "price": 10,
           "oldPrice": "",
           "description": "",

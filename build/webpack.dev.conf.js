@@ -59,6 +59,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     watchOptions: {
       poll: config.dev.poll,
     },
+    disableHostCheck: true,
     //第二步找到devServer,在里面添加
     before(app) {
       app.get('/api/seller', (req, res) => {

@@ -22,7 +22,8 @@
           <li v-for="(item,index) in goods" class="food-list" :key="index" ref="foodList">
             <h1 class="title">{{item.name}}</h1>
             <ul>
-              <li v-for="(food,index) in item.foods" class="food-item border-1px" :key="index">
+              <!--$event表示的是你点击的元素，不是你事件绑定的元素，事件触发默认是冒泡机制-->
+              <li @click="selectFood(food,$event)" v-for="(food,index) in item.foods" class="food-item border-1px" :key="index">
                 <div class="icon">
                   <img width="57" height="57" :src="food.icon">
                 </div>
@@ -37,6 +38,7 @@
                     <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                   </div>
                   <div class="cartcontrol-wrapper">
+                    <!--绑定子组件的this.$emit('add', event.target);-->
                     <cartcontrol @add="addFood" :food="food"></cartcontrol>
                   </div>
                 </div>
@@ -49,6 +51,8 @@
     <!--购物车 父组件访问子组件-->
     <shopcart ref="shopcart" :selectFoods="selectFoods" :seller="seller"
               :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice"></shopcart>
+    <!--商品详情-->
+    <food @add="addFood" :food="selectedFood"  ref="food"></food>
   </div>
 </template>
 
@@ -56,6 +60,7 @@
   import BScroll from 'better-scroll';
   import shopcart from 'components/shopcart/shopcart';
   import cartcontrol from 'components/cartcontrol/cartcontrol';
+  import food from 'components/food/food';
   const ERR_OK = 0;
   export default {
     props: {
@@ -65,7 +70,6 @@
     },
     data() {
       return {
-        selectedFoods: {},
         goods: [],
         listHeight: [],
         scrollY: 0,
@@ -110,7 +114,6 @@
       selectedGoods = selectedGoods ? JSON.parse(selectedGoods) : [];
       this.$http.get('/api/goods').then((response) => {
         response = response.body;
-        console.log('response:' + response);
         if (response.errno === ERR_OK) {
           selectedGoods.map(item => {
             response.data.map((food, index) => {
@@ -138,6 +141,7 @@
       });
     },
     methods: {
+      // 方法命名：有可能被外部调用的不加下划线，私有的方法一般加下划线
       selectMenu(index, event) {
         // 去掉自带的click事件点击，即pc端直接返回
         if (!event._constructed) {
@@ -148,12 +152,14 @@
         // scrollToElement() 是better-scroll中的方法，滚动到某个元素 el（必填）表示 dom 元素，time 表示动画时间，offsetX 和 offsetY 表示坐标偏移量，easing 表示缓动函数
         this.foodsScroll.scrollToElement(el, 300);
       },
+      // 点击详情
       selectFood(food, event) {
         if (!event._constructed) {
           return;
         }
         this.selectedFood = food;
-        // this.$refs.food.show();
+        // 调用子组件方法
+        this.$refs.food.show();
       },
       addFood(target, food) {
         this._drop(target);
@@ -201,7 +207,8 @@
     },
     components: {
       shopcart,
-      cartcontrol
+      cartcontrol,
+      food
     }
   };
 </script>

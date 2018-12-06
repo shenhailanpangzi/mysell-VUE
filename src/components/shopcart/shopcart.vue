@@ -17,7 +17,7 @@
         <!--控制底部右边内容随food的变化而变化，payDesc()控制显示内容，payClass()添加类调整显示样式-->
         <div class="content-right">
           <!--:class绑定计算属性变量payClass-->
-          <div class="pay" :class="payClass">
+          <div class="pay" :class="payClass" @click="pay">
             {{payDesc}}
           </div>
         </div>
@@ -73,8 +73,8 @@
         default() {
           return [
             {
-              price: 10,
-              count: 1
+              price: 0,
+              count: 0
             }
           ];
         }
@@ -172,7 +172,6 @@
         }
       },
       drop(el) {
-        console.log(el);
         for (let i = 0; i < this.balls.length; i++) {
           let ball = this.balls[i];
           if (!ball.show) {
@@ -198,12 +197,13 @@
         this.listShow = false;
       },
       pay() {
-        if (this.totalPrice < this.minPrice) {
-          return;
-        }
-        window.selectedGoods = JSON.stringify(this.selectFoods);
-        window.sellerPay = JSON.stringify(this.seller);
-        window.location.href = '#/payment';
+        alert('小破圆~');
+        // if (this.totalPrice < this.minPrice) {
+        //   return;
+        // }
+        // window.selectedGoods = JSON.stringify(this.selectFoods);
+        // window.sellerPay = JSON.stringify(this.seller);
+        // window.location.href = '#/payment';
       },
       addFood(target) {
         this.drop(target);
@@ -248,6 +248,7 @@
       // 初始化Scroll滑动模块
       _initScroll() {
         this.foodlistScroll = new BScroll(this.$refs.foodlist, {
+          // 结合BScroll的接口使用,是否将click事件传递,默认被拦截了
           click: true
         });
         this.$nextTick(() => {

@@ -4,14 +4,15 @@
       <!--减少按钮动画效果-->
       <transition name="move">
       <div class="cart-decrease icon-remove_circle_outline" v-show="food.count>0"
-           @click="decreaseCart">
+           @click.stop.prevent="decreaseCart">
         <span class="inner icon-remove_circle_outline"></span>
       </div>
       </transition>
       <div class="cart-count" v-show="food.count>0">
         {{food.count}}
       </div>
-      <div class="cart-add icon-add_circle" @click="addCart">
+      <!--@click.stop.prevent解决点击事件冒泡问题 阻止冒泡-->
+      <div class="cart-add icon-add_circle" @click.stop.prevent="addCart">
       </div>
     </div>
 </template>
@@ -29,6 +30,7 @@
     methods: {
       addCart(event) {
         // 如果不是自己派生发点击事件 防止pc点击触发两次的问题
+        console.log(event._constructed);
         if (!event._constructed) {
           return;
         }
@@ -41,9 +43,11 @@
         } else {
           this.food.count++;
         }
+        // 这句话的意思是提交名为'add'的事件给父组件;
         this.$emit('add', event.target, this.food);
       },
-      decreaseCart() {
+      decreaseCart(event) {
+        console.log('cartcontrol:decreaseCart');
         // 如果不是自己派生发点击事件 防止pc点击触发两次的问题
         if (!event._constructed) {
           return;
